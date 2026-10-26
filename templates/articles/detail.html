@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p><a href="{% url 'home' %}">Home</a></p>
+    <div>{{ article.content|safe }}</div>
+</body>
+</html>

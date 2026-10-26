@@ -1,0 +1,33 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('categories/', views.category_index, name='category_index'),
+    path('category/<slug:category_slug>/', views.category_detail, name='category_detail'),
+    path('article/<slug:article_slug>/', views.article_detail, name='article_detail'),
+    path('gallery/', views.gallery, name='gallery'),
+    path('gallery/<int:album_id>/', views.album_detail, name='album_detail'),
+    path('cms-admin/', views.admin_dashboard, name='admin_dashboard'),
+    path('cms-admin/categories/', views.admin_category_list, name='admin_category_list'),
+    path('cms-admin/categories/create/', views.admin_category_create, name='admin_category_create'),
+    path('cms-admin/categories/<int:category_id>/edit/', views.admin_category_edit, name='admin_category_edit'),
+    path('cms-admin/subcategories/', views.admin_subcategory_list, name='admin_subcategory_list'),
+    path('cms-admin/subcategories/create/', views.admin_subcategory_create, name='admin_subcategory_create'),
+    path('cms-admin/subcategories/<int:subcategory_id>/edit/', views.admin_subcategory_edit, name='admin_subcategory_edit'),
+    path('cms-admin/category-links/', views.admin_category_link_list, name='admin_category_link_list'),
+    path('cms-admin/category-links/create/', views.admin_category_link_create, name='admin_category_link_create'),
+    path('cms-admin/category-links/<int:category_link_id>/edit/', views.admin_category_link_edit, name='admin_category_link_edit'),
+    path('cms-admin/albums/', views.admin_album_list, name='admin_album_list'),
+    path('cms-admin/albums/create/', views.admin_album_create, name='admin_album_create'),
+    path('cms-admin/albums/<int:album_id>/edit/', views.admin_album_edit, name='admin_album_edit'),
+    path('cms-admin/carousels/', views.admin_carousel_list, name='admin_carousel_list'),
+    path('cms-admin/carousels/create/', views.admin_carousel_create, name='admin_carousel_create'),
+    path('cms-admin/carousels/<int:carousel_id>/edit/', views.admin_carousel_edit, name='admin_carousel_edit'),
+    path('cms-admin/themes/', views.admin_theme_list, name='admin_theme_list'),
+    path('cms-admin/themes/create/', views.admin_theme_create, name='admin_theme_create'),
+    path('cms-admin/themes/<int:theme_id>/edit/', views.admin_theme_edit, name='admin_theme_edit'),
+    path('cms-admin/articles/', views.admin_article_list, name='admin_article_list'),
+    path('cms-admin/articles/create/', views.admin_article_create, name='admin_article_create'),
+    path('cms-admin/articles/<int:article_id>/edit/', views.admin_article_edit, name='admin_article_edit'),
+]

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subcategories</title>
+</head>
+<body>
+    <h1>Subcategories</h1>
+    <p><a href="{% url 'admin_subcategory_create' %}">Create subcategory</a></p>
+    <ul>
+        {% for subcategory in subcategories %}
+            <li>{{ subcategory.name }} - <a href="{% url 'admin_subcategory_edit' subcategory.id %}">Edit</a></li>
+        {% empty %}
+            <li>No subcategories</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Albums</title>
+</head>
+<body>
+    <h1>Albums</h1>
+    <p><a href="{% url 'admin_album_create' %}">Create album</a></p>
+    <ul>
+        {% for album in albums %}
+            <li>{{ album.title }} - <a href="{% url 'album_detail' album.id %}">View</a> - <a href="{% url 'admin_album_edit' album.id %}">Edit</a></li>
+        {% empty %}
+            <li>No albums</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Category links</title>
+</head>
+<body>
+    <h1>Category links</h1>
+    <p><a href="{% url 'admin_category_link_create' %}">Create category link</a></p>
+    <ul>
+        {% for link in category_links %}
+            <li>{{ link.title }} - <a href="{{ link.url }}" target="_blank">Open</a> - <a href="{% url 'admin_category_link_edit' link.id %}">Edit</a></li>
+        {% empty %}
+            <li>No category links</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

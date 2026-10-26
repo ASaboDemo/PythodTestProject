@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Themes</title>
+</head>
+<body>
+    <h1>Themes</h1>
+    <p><a href="{% url 'admin_theme_create' %}">Create theme</a></p>
+    <ul>
+        {% for theme in themes %}
+            <li>{{ theme.name }} - <a href="{% url 'admin_theme_edit' theme.id %}">Edit</a></li>
+        {% empty %}
+            <li>No themes</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

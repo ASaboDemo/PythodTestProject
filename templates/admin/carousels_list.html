@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carousels</title>
+</head>
+<body>
+    <h1>Carousels</h1>
+    <p><a href="{% url 'admin_carousel_create' %}">Create carousel</a></p>
+    <ul>
+        {% for carousel in carousels %}
+            <li>{{ carousel.title }} - <a href="{% url 'admin_carousel_edit' carousel.id %}">Edit</a></li>
+        {% empty %}
+            <li>No carousels</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
